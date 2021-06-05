@@ -1,0 +1,17 @@
+name: Heroku Awake 2
+
+on:
+  schedule:
+    - cron: "10/30 * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: mikeesto/heroku-awake@1.0.0
+        with:
+          URL: "https://tgfilelnk.herokuapp.com"
+      - run: |
+          echo "CURL TGLINK"
+          curl https://tgfilelnk.herokuapp.com
